@@ -1,0 +1,406 @@
+{% extends "base.html" %}
+
+{% block title %}关于我们 - 基督教会{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 text-white mb-4">关于我们</h1>
+                <p class="lead text-white">认识我们的教会、信仰和使命</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Our Story -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-4">我们的故事</h2>
+                    <p class="lead">
+                        基督教会成立于2010年，从一个小小的家庭团契开始，至今已经发展成为拥有数百名会众的温暖大家庭。
+                    </p>
+                    <p>
+                        十多年来，我们见证了神奇妙的恩典和带领。从最初在客厅聚会，到如今拥有自己的崇拜场所，
+                        每一步都充满了神的恩典和弟兄姊妹的奉献。我们相信，教会的存在是为了荣耀神、服事人、
+                        传扬耶稣基督的福音。
+                    </p>
+                </div>
+
+                <!-- Our Mission -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-4">我们的使命</h2>
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="mission-icon">
+                                <i class="fas fa-cross fa-3x text-primary mb-3"></i>
+                            </div>
+                            <h4>荣耀神</h4>
+                            <p>以心灵诚实敬拜神，在生活的每个领域荣耀祂的名</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="mission-icon">
+                                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            </div>
+                            <h4>造就信徒</h4>
+                            <p>帮助信徒在灵命上成长，成为基督的精兵</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="mission-icon">
+                                <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+                            </div>
+                            <h4>传福音</h4>
+                            <p>向世界分享耶稣基督的好消息，使万民作祂的门徒</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our Beliefs -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-4">我们的信仰</h2>
+                    <div class="accordion" id="beliefsAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#belief1">
+                                    圣经
+                                </button>
+                            </h2>
+                            <div id="belief1" class="accordion-collapse collapse show" data-bs-parent="#beliefsAccordion">
+                                <div class="accordion-body">
+                                    我们相信圣经是神所默示的话语，是信徒信仰和生活的最高权威。旧约和新约66卷书，
+                                    完全无误地启示了神的救恩计划。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief2">
+                                    三位一体神
+                                </button>
+                            </h2>
+                            <div id="belief2" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion">
+                                <div class="accordion-body">
+                                    我们相信独一的真神，圣父、圣子、圣灵三位一体，同尊同荣，同受敬拜。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief3">
+                                    耶稣基督
+                                </button>
+                            </h2>
+                            <div id="belief3" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion">
+                                <div class="accordion-body">
+                                    我们相信耶稣基督是神的独生子，由圣灵感孕，童贞女马利亚所生。祂是完全的神，
+                                    也是完全的人，为我们的罪死在十字架上，第三天复活，升天后坐在父神的右边。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Team -->
+                <div class="mb-5">
+                    <h2 class="section-title mb-4">牧养团队</h2>
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=王牧师" alt="王牧师" class="rounded-circle mb-3" width="150">
+                            <h5>王牧师</h5>
+                            <p class="text-muted">主任牧师</p>
+                            <p class="small">拥有20年牧养经验，神学博士，致力于圣经教导和门徒训练。</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=李牧师" alt="李牧师" class="rounded-circle mb-3" width="150">
+                            <h5>李牧师</h5>
+                            <p class="text-muted">副牧师</p>
+                            <p class="small">负责青年事工和社区 Outreach，充满热情和创意。</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=张长老" alt="张长老" class="rounded-circle mb-3" width="150">
+                            <h5>张长老</h5>
+                            <p class="text-muted">长老</p>
+                            <p class="small">负责教会行政和财务管理，见证神 faithful 30年。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">加入我们的教会大家庭</h2>
+                <p class="lead mb-4">无论您来自哪里，我们都欢迎您的到来</p>
+                <a href="/contact" class="btn btn-primary btn-lg me-3">联系我们</a>
+                <a href="/ministries" class="btn btn-outline-primary btn-lg">了解事工</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- AI SMART EDIT INJECTION START -->
+<script>
+(function () {
+  const NAMESPACE = 'AI_SMART_EDIT';
+  let isActive = false;
+  let overlay = null;
+  let selectedOverlay = null;
+
+  // Initialize overlay elements
+  function createOverlay(id, color, zIndex) {
+    const el = document.createElement('div');
+    el.id = id;
+    el.style.position = 'absolute';
+    el.style.border = `2px solid ${color}`;
+    el.style.backgroundColor = `${color}33`; // 20% opacity
+    el.style.pointerEvents = 'none'; // Click-through
+    el.style.zIndex = zIndex;
+    el.style.display = 'none';
+    el.style.transition = 'all 0.1s ease-out';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  function ensureOverlays() {
+    if (!overlay) overlay = createOverlay('ai-smart-edit-hover', '#0070f3', '2147483646');
+    if (!selectedOverlay) selectedOverlay = createOverlay('ai-smart-edit-selected', '#f5a623', '2147483647');
+  }
+
+  function getStableSelector(el) {
+    if (el.id) return `#${el.id}`;
+    let path = [];
+    while (el && el.nodeType === Node.ELEMENT_NODE) {
+      let selector = el.nodeName.toLowerCase();
+      if (el.className && typeof el.className === 'string') {
+        selector += `.${el.className.trim().split(/\s+/).join('.')}`;
+      }
+      let siblingIndex = 1;
+      let sibling = el.previousElementSibling;
+      while (sibling) {
+        if (sibling.nodeName === el.nodeName) siblingIndex++;
+        sibling = sibling.previousElementSibling;
+      }
+      if (siblingIndex > 1) selector += `:nth-of-type(${siblingIndex})`;
+      path.unshift(selector);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+
+  function captureContext(el) {
+    const rect = el.getBoundingClientRect();
+    const computed = window.getComputedStyle(el);
+    
+    // Parent info
+    const parent = el.parentElement;
+    
+    return {
+      tagName: el.tagName.toLowerCase(),
+      id: el.id || '',
+      className: el.className instanceof String ? el.className.trim() : (el.classList ? Array.from(el.classList).join(' ') : ''),
+      rect: {
+        x: rect.left,
+        y: rect.top,
+        width: rect.width,
+        height: rect.height
+      },
+      computedStyles: {
+        display: computed.display,
+        position: computed.position,
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        fontFamily: computed.fontFamily,
+        fontSize: computed.fontSize,
+        fontWeight: computed.fontWeight,
+        lineHeight: computed.lineHeight,
+        margin: computed.margin,
+        padding: computed.padding,
+        border: computed.border,
+        borderRadius: computed.borderRadius,
+        zIndex: computed.zIndex,
+        textAlign: computed.textAlign,
+        opacity: computed.opacity,
+        visibility: computed.visibility
+      },
+      innerText: el.innerText ? el.innerText.substring(0, 300).trim() : '',
+      html: el.outerHTML || '',
+      innerHTML: el.innerHTML ? el.innerHTML.substring(0, 300).trim() : '',
+      selector: getStableSelector(el),
+      parent: parent ? {
+        tagName: parent.tagName.toLowerCase(),
+        id: parent.id || ''
+      } : null,
+      url: window.location.href,
+      route: window.location.pathname,
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    };
+  }
+
+  function updateOverlay(overlayEl, targetEl) {
+    if (!targetEl) {
+      overlayEl.style.display = 'none';
+      return;
+    }
+    const rect = targetEl.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    overlayEl.style.display = 'block';
+    overlayEl.style.left = `${rect.left + scrollX}px`;
+    overlayEl.style.top = `${rect.top + scrollY}px`;
+    overlayEl.style.width = `${rect.width}px`;
+    overlayEl.style.height = `${rect.height}px`;
+  }
+
+  // --- Event Handlers ---
+
+  function handleMouseOver(e) {
+    if (!isActive) return;
+    updateOverlay(overlay, e.target);
+  }
+
+  function handleClick(e) {
+    if (!isActive) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const target = e.target;
+    // Highlight selected
+    updateOverlay(selectedOverlay, target);
+    
+    // Capture and send
+    const context = captureContext(target);
+    window.parent.postMessage({
+      type: `${NAMESPACE}:SELECTED`,
+      payload: context
+    }, '*'); // In production, replace '*' with specific origin if possible
+  }
+
+  function handleGenericMessage(e) {
+      // Security measure: In a real environment, check e.origin here
+      // if (e.origin !== "http://localhost:3000") return;
+
+      if (e.data && e.data.type) {
+        switch (e.data.type) {
+          case `${NAMESPACE}:PING`:
+            window.parent.postMessage({ type: `${NAMESPACE}:PONG` }, '*');
+            break;
+          case `${NAMESPACE}:ENABLE`:
+            isActive = true;
+            ensureOverlays();
+            document.body.style.cursor = 'crosshair';
+            document.addEventListener('mouseover', handleMouseOver, true);
+            document.addEventListener('click', handleClick, true);
+            break;
+          case `${NAMESPACE}:DISABLE`:
+            isActive = false;
+            if (overlay) overlay.style.display = 'none';
+            if (selectedOverlay) selectedOverlay.style.display = 'none';
+            document.body.style.cursor = '';
+            document.removeEventListener('mouseover', handleMouseOver, true);
+            document.removeEventListener('click', handleClick, true);
+            break;
+        }
+      }
+  }
+
+  // Listen for messages from parent
+  window.addEventListener('message', handleGenericMessage);
+
+  // Handle Scroll to detect bottom
+  let scrollTimeout;
+  const onScroll = () => {
+    if (!isActive) return;
+    
+    if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+    
+    scrollTimeout = requestAnimationFrame(() => {
+        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // Check if we are within 100px of the bottom
+        const isBottom = (scrollTop + clientHeight) >= (scrollHeight - 100);
+        
+        window.parent.postMessage({
+            type: `${NAMESPACE}:SCROLL_UPDATE`,
+            payload: { isBottom }
+        }, '*');
+    });
+  };
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Handle ESC key to exit
+  document.addEventListener('keydown', (e) => {
+    if (isActive && e.key === 'Escape') {
+      isActive = false;
+      document.body.style.cursor = '';
+      if (overlay) overlay.style.display = 'none';
+      if (selectedOverlay) selectedOverlay.style.display = 'none';
+      window.parent.postMessage({ type: `${NAMESPACE}:DISABLE` }, '*');
+    }
+  });
+
+  console.log('[AI Smart Edit] Target script loaded.');
+})();
+
+</script>
+<!-- AI SMART EDIT INJECTION END -->
+

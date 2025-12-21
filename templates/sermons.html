@@ -1,0 +1,600 @@
+{% extends "base.html" %}
+
+{% block title %}讲道信息 - 基督教会{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 text-white mb-4">讲道信息</h1>
+                <p class="lead text-white">聆听神的话语，得着属灵的喂养</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sermons Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Filter Section -->
+            <div class="col-lg-3">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">筛选讲道</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">年份</label>
+                            <select class="form-select" id="yearFilter">
+                                <option value="">所有年份</option>
+                                <option value="2024" selected>2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">系列</label>
+                            <select class="form-select" id="seriesFilter">
+                                <option value="">所有系列</option>
+                                <option value="basic">基本要道</option>
+                                <option value="life">生活应用</option>
+                                <option value="bible">圣经书卷</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">讲员</label>
+                            <select class="form-select" id="speakerFilter">
+                                <option value="">所有讲员</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="applyFilters()">应用筛选</button>
+                    </div>
+                </div>
+
+                <!-- Latest Series -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">最新系列</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <h6 class="mb-1">信心的旅程</h6>
+                                <small class="text-muted">8篇讲道</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <h6 class="mb-1">基督化家庭</h6>
+                                <small class="text-muted">6篇讲道</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermons List -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>所有讲道</h2>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="sermons-container">
+                    <!-- Sermons will be loaded here via JavaScript -->
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="讲道分页" class="mt-5">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- Pagination will be generated here -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sermon Modal -->
+<div class="modal fade" id="sermonModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sermonModalTitle">讲道详情</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="sermonModalBody">
+                <!-- Sermon details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentPage = 1;
+let currentFilters = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadSermons();
+    loadSpeakers();
+});
+
+function loadSermons(page = 1, filters = {}) {
+    const params = new URLSearchParams({
+        page: page,
+        per_page: 9,
+        ...filters
+    });
+
+    fetch(`/api/sermons?${params}`)
+        .then(response => response.json())
+        .then(data => {
+            displaySermons(data.sermons);
+            updatePagination(data.page, data.total_pages, data.total);
+            currentPage = data.page;
+        })
+        .catch(error => {
+            console.error('Error loading sermons:', error);
+            document.getElementById('sermons-container').innerHTML =
+                '<div class="col-12 text-center"><p>加载讲道信息时出错</p></div>';
+        });
+}
+
+function loadSpeakers() {
+    fetch('/api/sermons')
+        .then(response => response.json())
+        .then(data => {
+            const speakers = [...new Set(data.sermons.map(s => s.speaker))];
+            const speakerFilter = document.getElementById('speakerFilter');
+            speakers.forEach(speaker => {
+                const option = document.createElement('option');
+                option.value = speaker;
+                option.textContent = speaker;
+                speakerFilter.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error loading speakers:', error));
+}
+
+function displaySermons(sermons) {
+    const container = document.getElementById('sermons-container');
+
+    if (sermons.length === 0) {
+        container.innerHTML = '<div class="col-12 text-center"><p>暂无符合条件的讲道</p></div>';
+        return;
+    }
+
+    container.innerHTML = sermons.map(sermon => `
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 hover-card sermon-card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title">${sermon.title}</h5>
+                        <span class="badge bg-primary">${new Date(sermon.date).getFullYear()}</span>
+                    </div>
+                    <p class="text-muted mb-2">
+                        <i class="fas fa-user me-1"></i>${sermon.speaker}<br>
+                        <i class="fas fa-calendar me-1"></i>${sermon.date}
+                    </p>
+                    <p class="card-text">${sermon.description}</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-primary" onclick="playAudio('${sermon.audio_url}')">
+                            <i class="fas fa-play"></i> 音频
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary" onclick="playVideo('${sermon.video_url}')">
+                            <i class="fas fa-video"></i> 视频
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="showSermonDetails(${sermon.id})">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function updatePagination(currentPage, totalPages, totalItems) {
+    const pagination = document.getElementById('pagination');
+
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = '';
+
+    // Previous button
+    paginationHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">上一页</a>
+        </li>
+    `;
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            paginationHTML += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+                </li>
+            `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            `;
+        }
+    }
+
+    // Next button
+    paginationHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">下一页</a>
+        </li>
+    `;
+
+    pagination.innerHTML = paginationHTML;
+}
+
+function changePage(page) {
+    loadSermons(page, currentFilters);
+    return false;
+}
+
+function applyFilters() {
+    const year = document.getElementById('yearFilter').value;
+    const series = document.getElementById('seriesFilter').value;
+    const speaker = document.getElementById('speakerFilter').value;
+
+    currentFilters = {};
+    if (year) currentFilters.year = year;
+    if (series) currentFilters.series = series;
+    if (speaker) currentFilters.speaker = speaker;
+
+    loadSermons(1, currentFilters);
+}
+
+function showSermonDetails(sermonId) {
+    fetch(`/api/sermons/${sermonId}`)
+        .then(response => response.json())
+        .then(sermon => {
+            document.getElementById('sermonModalTitle').textContent = sermon.title;
+            document.getElementById('sermonModalBody').innerHTML = `
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6>讲道简介</h6>
+                        <p>${sermon.description}</p>
+
+                        <h6 class="mt-4">讲道经文</h6>
+                        <p><em>（待添加经文信息）</em></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>讲道信息</h6>
+                        <ul class="list-unstyled">
+                            <li><strong>讲员：</strong>${sermon.speaker}</li>
+                            <li><strong>日期：</strong>${sermon.date}</li>
+                            <li><strong>时长：</strong>约45分钟</li>
+                        </ul>
+
+                        <div class="mt-3">
+                            <a href="${sermon.audio_url}" class="btn btn-primary btn-sm w-100 mb-2">
+                                <i class="fas fa-download"></i> 下载音频
+                            </a>
+                            <a href="${sermon.video_url}" class="btn btn-outline-primary btn-sm w-100">
+                                <i class="fas fa-download"></i> 下载视频
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modal = new bootstrap.Modal(document.getElementById('sermonModal'));
+            modal.show();
+        })
+        .catch(error => {
+            console.error('Error loading sermon details:', error);
+            alert('加载讲道详情时出错');
+        });
+}
+
+function playAudio(audioUrl) {
+    // In a real application, this would open an audio player
+    alert(`播放音频：${audioUrl}`);
+}
+
+function playVideo(videoUrl) {
+    // In a real application, this would open a video player
+    alert(`播放视频：${videoUrl}`);
+}
+
+function setViewMode(mode) {
+    // Toggle view mode between grid and list
+    const container = document.getElementById('sermons-container');
+    const buttons = document.querySelectorAll('.btn-group .btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.closest('.btn').classList.add('active');
+
+    if (mode === 'list') {
+        container.classList.remove('row');
+        container.classList.add('list-group');
+    } else {
+        container.classList.add('row');
+        container.classList.remove('list-group');
+    }
+
+    // Reload sermons with new view mode
+    loadSermons(currentPage, currentFilters);
+}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- AI SMART EDIT INJECTION START -->
+<script>
+(function () {
+  const NAMESPACE = 'AI_SMART_EDIT';
+  let isActive = false;
+  let overlay = null;
+  let selectedOverlay = null;
+
+  // Initialize overlay elements
+  function createOverlay(id, color, zIndex) {
+    const el = document.createElement('div');
+    el.id = id;
+    el.style.position = 'absolute';
+    el.style.border = `2px solid ${color}`;
+    el.style.backgroundColor = `${color}33`; // 20% opacity
+    el.style.pointerEvents = 'none'; // Click-through
+    el.style.zIndex = zIndex;
+    el.style.display = 'none';
+    el.style.transition = 'all 0.1s ease-out';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  function ensureOverlays() {
+    if (!overlay) overlay = createOverlay('ai-smart-edit-hover', '#0070f3', '2147483646');
+    if (!selectedOverlay) selectedOverlay = createOverlay('ai-smart-edit-selected', '#f5a623', '2147483647');
+  }
+
+  function getStableSelector(el) {
+    if (el.id) return `#${el.id}`;
+    let path = [];
+    while (el && el.nodeType === Node.ELEMENT_NODE) {
+      let selector = el.nodeName.toLowerCase();
+      if (el.className && typeof el.className === 'string') {
+        selector += `.${el.className.trim().split(/\s+/).join('.')}`;
+      }
+      let siblingIndex = 1;
+      let sibling = el.previousElementSibling;
+      while (sibling) {
+        if (sibling.nodeName === el.nodeName) siblingIndex++;
+        sibling = sibling.previousElementSibling;
+      }
+      if (siblingIndex > 1) selector += `:nth-of-type(${siblingIndex})`;
+      path.unshift(selector);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+
+  function captureContext(el) {
+    const rect = el.getBoundingClientRect();
+    const computed = window.getComputedStyle(el);
+    
+    // Parent info
+    const parent = el.parentElement;
+    
+    return {
+      tagName: el.tagName.toLowerCase(),
+      id: el.id || '',
+      className: el.className instanceof String ? el.className.trim() : (el.classList ? Array.from(el.classList).join(' ') : ''),
+      rect: {
+        x: rect.left,
+        y: rect.top,
+        width: rect.width,
+        height: rect.height
+      },
+      computedStyles: {
+        display: computed.display,
+        position: computed.position,
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        fontFamily: computed.fontFamily,
+        fontSize: computed.fontSize,
+        fontWeight: computed.fontWeight,
+        lineHeight: computed.lineHeight,
+        margin: computed.margin,
+        padding: computed.padding,
+        border: computed.border,
+        borderRadius: computed.borderRadius,
+        zIndex: computed.zIndex,
+        textAlign: computed.textAlign,
+        opacity: computed.opacity,
+        visibility: computed.visibility
+      },
+      innerText: el.innerText ? el.innerText.substring(0, 300).trim() : '',
+      html: el.outerHTML || '',
+      innerHTML: el.innerHTML ? el.innerHTML.substring(0, 300).trim() : '',
+      selector: getStableSelector(el),
+      parent: parent ? {
+        tagName: parent.tagName.toLowerCase(),
+        id: parent.id || ''
+      } : null,
+      url: window.location.href,
+      route: window.location.pathname,
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    };
+  }
+
+  function updateOverlay(overlayEl, targetEl) {
+    if (!targetEl) {
+      overlayEl.style.display = 'none';
+      return;
+    }
+    const rect = targetEl.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    overlayEl.style.display = 'block';
+    overlayEl.style.left = `${rect.left + scrollX}px`;
+    overlayEl.style.top = `${rect.top + scrollY}px`;
+    overlayEl.style.width = `${rect.width}px`;
+    overlayEl.style.height = `${rect.height}px`;
+  }
+
+  // --- Event Handlers ---
+
+  function handleMouseOver(e) {
+    if (!isActive) return;
+    updateOverlay(overlay, e.target);
+  }
+
+  function handleClick(e) {
+    if (!isActive) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const target = e.target;
+    // Highlight selected
+    updateOverlay(selectedOverlay, target);
+    
+    // Capture and send
+    const context = captureContext(target);
+    window.parent.postMessage({
+      type: `${NAMESPACE}:SELECTED`,
+      payload: context
+    }, '*'); // In production, replace '*' with specific origin if possible
+  }
+
+  function handleGenericMessage(e) {
+      // Security measure: In a real environment, check e.origin here
+      // if (e.origin !== "http://localhost:3000") return;
+
+      if (e.data && e.data.type) {
+        switch (e.data.type) {
+          case `${NAMESPACE}:PING`:
+            window.parent.postMessage({ type: `${NAMESPACE}:PONG` }, '*');
+            break;
+          case `${NAMESPACE}:ENABLE`:
+            isActive = true;
+            ensureOverlays();
+            document.body.style.cursor = 'crosshair';
+            document.addEventListener('mouseover', handleMouseOver, true);
+            document.addEventListener('click', handleClick, true);
+            break;
+          case `${NAMESPACE}:DISABLE`:
+            isActive = false;
+            if (overlay) overlay.style.display = 'none';
+            if (selectedOverlay) selectedOverlay.style.display = 'none';
+            document.body.style.cursor = '';
+            document.removeEventListener('mouseover', handleMouseOver, true);
+            document.removeEventListener('click', handleClick, true);
+            break;
+        }
+      }
+  }
+
+  // Listen for messages from parent
+  window.addEventListener('message', handleGenericMessage);
+
+  // Handle Scroll to detect bottom
+  let scrollTimeout;
+  const onScroll = () => {
+    if (!isActive) return;
+    
+    if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+    
+    scrollTimeout = requestAnimationFrame(() => {
+        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // Check if we are within 100px of the bottom
+        const isBottom = (scrollTop + clientHeight) >= (scrollHeight - 100);
+        
+        window.parent.postMessage({
+            type: `${NAMESPACE}:SCROLL_UPDATE`,
+            payload: { isBottom }
+        }, '*');
+    });
+  };
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Handle ESC key to exit
+  document.addEventListener('keydown', (e) => {
+    if (isActive && e.key === 'Escape') {
+      isActive = false;
+      document.body.style.cursor = '';
+      if (overlay) overlay.style.display = 'none';
+      if (selectedOverlay) selectedOverlay.style.display = 'none';
+      window.parent.postMessage({ type: `${NAMESPACE}:DISABLE` }, '*');
+    }
+  });
+
+  console.log('[AI Smart Edit] Target script loaded.');
+})();
+
+</script>
+<!-- AI SMART EDIT INJECTION END -->
+

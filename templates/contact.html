@@ -1,0 +1,567 @@
+{% extends "base.html" %}
+
+{% block title %}联系我们 - 基督教会{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 text-white mb-4">联系我们</h1>
+                <p class="lead text-white">我们期待与您相遇，欢迎您来到我们的教会</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">发送消息</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">姓名 *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">邮箱 *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">电话</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">主题</label>
+                                <select class="form-select" id="subject" name="subject">
+                                    <option value="">选择主题</option>
+                                    <option value="visit">第一次拜访</option>
+                                    <option value="prayer">祷告请求</option>
+                                    <option value="ministry">事工参与</option>
+                                    <option value="question">一般咨询</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">留言 *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-paper-plane me-2"></i>发送消息
+                            </button>
+                        </form>
+                        <div id="contactMessage" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">教会信息</h4>
+
+                        <div class="contact-item mb-3">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">地址</h5>
+                                    <p class="text-muted mb-0">
+                                        城市中心街道123号<br>
+                                        邮编：100000
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-3">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone fa-2x text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">电话</h5>
+                                    <p class="text-muted mb-0">
+                                        办公室：+86 123 4567 8900<br>
+                                        紧急：+86 123 4567 8901
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-3">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope fa-2x text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">邮箱</h5>
+                                    <p class="text-muted mb-0">
+                                        一般咨询：info@church.com<br>
+                                        祷告请求：prayer@church.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-clock fa-2x text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">办公时间</h5>
+                                    <p class="text-muted mb-0">
+                                        周一至周五：9:00 - 17:00<br>
+                                        周六：9:00 - 12:00<br>
+                                        主日：8:00 - 14:00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">关注我们</h4>
+                        <div class="d-flex justify-content-around">
+                            <a href="#" class="text-primary text-decoration-none">
+                                <i class="fab fa-facebook fa-3x"></i>
+                                <p class="small mt-2 mb-0">Facebook</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none">
+                                <i class="fab fa-youtube fa-3x"></i>
+                                <p class="small mt-2 mb-0">YouTube</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none">
+                                <i class="fab fa-instagram fa-3x"></i>
+                                <p class="small mt-2 mb-0">Instagram</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none">
+                                <i class="fab fa-telegram fa-3x"></i>
+                                <p class="small mt-2 mb-0">Telegram</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4">找到我们</h2>
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8987419176584!2d121.5433656!3d25.0339798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2sTaipei%20101%2C%20Taiwan!5e0!3m2!1sen!2sus!4v1234567890"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Prayer Request Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">需要祷告吗？</h2>
+                <p class="lead mb-4">
+                    我们的祷告团队很乐意为您祷告。请分享您的需要，让我们在祷告中记念您。
+                </p>
+                <button class="btn btn-primary btn-lg" onclick="showPrayerForm()">
+                    <i class="fas fa-praying-hands me-2"></i>提交祷告请求
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Prayer Request Modal -->
+<div class="modal fade" id="prayerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">祷告请求</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="prayerForm">
+                    <div class="mb-3">
+                        <label for="prayerName" class="form-label">姓名</label>
+                        <input type="text" class="form-control" id="prayerName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prayerContact" class="form-label">联系方式（邮箱或电话）</label>
+                        <input type="text" class="form-control" id="prayerContact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prayerRequest" class="form-label">祷告事项</label>
+                        <textarea class="form-control" id="prayerRequest" rows="4" required></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="anonymousRequest">
+                        <label class="form-check-label" for="anonymousRequest">
+                            匿名提交（不显示姓名）
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">提交祷告请求</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            const messageDiv = document.getElementById('contactMessage');
+            messageDiv.innerHTML = `
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle me-2"></i>
+                    ${result.message}
+                </div>
+            `;
+            this.reset();
+
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        })
+        .catch(error => {
+            const messageDiv = document.getElementById('contactMessage');
+            messageDiv.innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    发送失败，请稍后重试或直接联系我们。
+                </div>
+            `;
+        });
+    });
+
+    // Prayer form submission
+    document.getElementById('prayerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            contact: formData.get('contact'),
+            request: formData.get('request'),
+            anonymous: document.getElementById('anonymousRequest').checked
+        };
+
+        // In a real application, this would send to a prayer API
+        console.log('Prayer request:', data);
+
+        alert('祷告请求已提交，我们的祷告团队会为您祷告。');
+
+        // Close modal and reset form
+        bootstrap.Modal.getInstance(document.getElementById('prayerModal')).hide();
+        this.reset();
+    });
+});
+
+function showPrayerForm() {
+    const modal = new bootstrap.Modal(document.getElementById('prayerModal'));
+    modal.show();
+}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- AI SMART EDIT INJECTION START -->
+<script>
+(function () {
+  const NAMESPACE = 'AI_SMART_EDIT';
+  let isActive = false;
+  let overlay = null;
+  let selectedOverlay = null;
+
+  // Initialize overlay elements
+  function createOverlay(id, color, zIndex) {
+    const el = document.createElement('div');
+    el.id = id;
+    el.style.position = 'absolute';
+    el.style.border = `2px solid ${color}`;
+    el.style.backgroundColor = `${color}33`; // 20% opacity
+    el.style.pointerEvents = 'none'; // Click-through
+    el.style.zIndex = zIndex;
+    el.style.display = 'none';
+    el.style.transition = 'all 0.1s ease-out';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  function ensureOverlays() {
+    if (!overlay) overlay = createOverlay('ai-smart-edit-hover', '#0070f3', '2147483646');
+    if (!selectedOverlay) selectedOverlay = createOverlay('ai-smart-edit-selected', '#f5a623', '2147483647');
+  }
+
+  function getStableSelector(el) {
+    if (el.id) return `#${el.id}`;
+    let path = [];
+    while (el && el.nodeType === Node.ELEMENT_NODE) {
+      let selector = el.nodeName.toLowerCase();
+      if (el.className && typeof el.className === 'string') {
+        selector += `.${el.className.trim().split(/\s+/).join('.')}`;
+      }
+      let siblingIndex = 1;
+      let sibling = el.previousElementSibling;
+      while (sibling) {
+        if (sibling.nodeName === el.nodeName) siblingIndex++;
+        sibling = sibling.previousElementSibling;
+      }
+      if (siblingIndex > 1) selector += `:nth-of-type(${siblingIndex})`;
+      path.unshift(selector);
+      el = el.parentNode;
+    }
+    return path.join(' > ');
+  }
+
+  function captureContext(el) {
+    const rect = el.getBoundingClientRect();
+    const computed = window.getComputedStyle(el);
+    
+    // Parent info
+    const parent = el.parentElement;
+    
+    return {
+      tagName: el.tagName.toLowerCase(),
+      id: el.id || '',
+      className: el.className instanceof String ? el.className.trim() : (el.classList ? Array.from(el.classList).join(' ') : ''),
+      rect: {
+        x: rect.left,
+        y: rect.top,
+        width: rect.width,
+        height: rect.height
+      },
+      computedStyles: {
+        display: computed.display,
+        position: computed.position,
+        color: computed.color,
+        backgroundColor: computed.backgroundColor,
+        fontFamily: computed.fontFamily,
+        fontSize: computed.fontSize,
+        fontWeight: computed.fontWeight,
+        lineHeight: computed.lineHeight,
+        margin: computed.margin,
+        padding: computed.padding,
+        border: computed.border,
+        borderRadius: computed.borderRadius,
+        zIndex: computed.zIndex,
+        textAlign: computed.textAlign,
+        opacity: computed.opacity,
+        visibility: computed.visibility
+      },
+      innerText: el.innerText ? el.innerText.substring(0, 300).trim() : '',
+      html: el.outerHTML || '',
+      innerHTML: el.innerHTML ? el.innerHTML.substring(0, 300).trim() : '',
+      selector: getStableSelector(el),
+      parent: parent ? {
+        tagName: parent.tagName.toLowerCase(),
+        id: parent.id || ''
+      } : null,
+      url: window.location.href,
+      route: window.location.pathname,
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    };
+  }
+
+  function updateOverlay(overlayEl, targetEl) {
+    if (!targetEl) {
+      overlayEl.style.display = 'none';
+      return;
+    }
+    const rect = targetEl.getBoundingClientRect();
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    overlayEl.style.display = 'block';
+    overlayEl.style.left = `${rect.left + scrollX}px`;
+    overlayEl.style.top = `${rect.top + scrollY}px`;
+    overlayEl.style.width = `${rect.width}px`;
+    overlayEl.style.height = `${rect.height}px`;
+  }
+
+  // --- Event Handlers ---
+
+  function handleMouseOver(e) {
+    if (!isActive) return;
+    updateOverlay(overlay, e.target);
+  }
+
+  function handleClick(e) {
+    if (!isActive) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const target = e.target;
+    // Highlight selected
+    updateOverlay(selectedOverlay, target);
+    
+    // Capture and send
+    const context = captureContext(target);
+    window.parent.postMessage({
+      type: `${NAMESPACE}:SELECTED`,
+      payload: context
+    }, '*'); // In production, replace '*' with specific origin if possible
+  }
+
+  function handleGenericMessage(e) {
+      // Security measure: In a real environment, check e.origin here
+      // if (e.origin !== "http://localhost:3000") return;
+
+      if (e.data && e.data.type) {
+        switch (e.data.type) {
+          case `${NAMESPACE}:PING`:
+            window.parent.postMessage({ type: `${NAMESPACE}:PONG` }, '*');
+            break;
+          case `${NAMESPACE}:ENABLE`:
+            isActive = true;
+            ensureOverlays();
+            document.body.style.cursor = 'crosshair';
+            document.addEventListener('mouseover', handleMouseOver, true);
+            document.addEventListener('click', handleClick, true);
+            break;
+          case `${NAMESPACE}:DISABLE`:
+            isActive = false;
+            if (overlay) overlay.style.display = 'none';
+            if (selectedOverlay) selectedOverlay.style.display = 'none';
+            document.body.style.cursor = '';
+            document.removeEventListener('mouseover', handleMouseOver, true);
+            document.removeEventListener('click', handleClick, true);
+            break;
+        }
+      }
+  }
+
+  // Listen for messages from parent
+  window.addEventListener('message', handleGenericMessage);
+
+  // Handle Scroll to detect bottom
+  let scrollTimeout;
+  const onScroll = () => {
+    if (!isActive) return;
+    
+    if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+    
+    scrollTimeout = requestAnimationFrame(() => {
+        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // Check if we are within 100px of the bottom
+        const isBottom = (scrollTop + clientHeight) >= (scrollHeight - 100);
+        
+        window.parent.postMessage({
+            type: `${NAMESPACE}:SCROLL_UPDATE`,
+            payload: { isBottom }
+        }, '*');
+    });
+  };
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Handle ESC key to exit
+  document.addEventListener('keydown', (e) => {
+    if (isActive && e.key === 'Escape') {
+      isActive = false;
+      document.body.style.cursor = '';
+      if (overlay) overlay.style.display = 'none';
+      if (selectedOverlay) selectedOverlay.style.display = 'none';
+      window.parent.postMessage({ type: `${NAMESPACE}:DISABLE` }, '*');
+    }
+  });
+
+  console.log('[AI Smart Edit] Target script loaded.');
+})();
+
+</script>
+<!-- AI SMART EDIT INJECTION END -->
+
