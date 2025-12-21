@@ -5,7 +5,6 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'church_website_secret_key_2024'
-app.config.from_object(Config)
 # Sample data for demonstration
 sample_sermons = [
     {
@@ -128,5 +127,5 @@ def api_newsletter():
     })
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 3000))
+    port = int(os.environ.get('PORT', 3100))
     app.run(host='0.0.0.0', port=port)
