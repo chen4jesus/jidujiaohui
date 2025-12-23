@@ -1,132 +1,156 @@
 {% extends "base.html" %}
 
-{% block title %}关于我们 - 基督教会{% endblock %}
+{% block title %}联系我们 - 基督教会{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
-<section class="page-header" data-ai-src-id="templates/about.html::0">
-    <div class="container" data-ai-src-id="templates/about.html::1">
-        <div class="row" data-ai-src-id="templates/about.html::2">
-            <div class="col-lg-8 mx-auto text-center" data-ai-src-id="templates/about.html::3">
-                <h1 class="display-4 text-white mb-4" data-ai-src-id="templates/about.html::4">关于我们</h1>
-                <p class="lead text-white" data-ai-src-id="templates/about.html::5">认识我们的教会、信仰和使命</p>
+<section class="page-header" data-ai-src-id=".claudable/baselines/templates/contact.html::0">
+    <div class="container" data-ai-src-id=".claudable/baselines/templates/contact.html::1">
+        <div class="row" data-ai-src-id=".claudable/baselines/templates/contact.html::2">
+            <div class="col-lg-8 mx-auto text-center" data-ai-src-id=".claudable/baselines/templates/contact.html::3">
+                <h1 class="display-4 text-white mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::4">联系我们</h1>
+                <p class="lead text-white" data-ai-src-id=".claudable/baselines/templates/contact.html::5">我们期待与您相遇，欢迎您来到我们的教会</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- About Content -->
-<section class="py-5" data-ai-src-id="templates/about.html::6">
-    <div class="container" data-ai-src-id="templates/about.html::7">
-        <div class="row" data-ai-src-id="templates/about.html::8">
-            <div class="col-lg-8 mx-auto" data-ai-src-id="templates/about.html::9">
-                <!-- Our Story -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::10">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::11">我们的故事</h2>
-                    <p class="lead" data-ai-src-id="templates/about.html::12">
-                        基督教会成立于2010年，从一个小小的家庭团契开始，至今已经发展成为拥有数百名会众的温暖大家庭。
-                    </p>
-                    <p data-ai-src-id="templates/about.html::13">
-                        十多年来，我们见证了神奇妙的恩典和带领。从最初在客厅聚会，到如今拥有自己的崇拜场所，
-                        每一步都充满了神的恩典和弟兄姊妹的奉献。我们相信，教会的存在是为了荣耀神、服事人、
-                        传扬耶稣基督的福音。
-                    </p>
+<!-- Contact Content -->
+<section class="py-5" data-ai-src-id=".claudable/baselines/templates/contact.html::6">
+    <div class="container" data-ai-src-id=".claudable/baselines/templates/contact.html::7">
+        <div class="row" data-ai-src-id=".claudable/baselines/templates/contact.html::8">
+            <!-- Contact Form -->
+            <div class="col-lg-6 mb-4 mb-lg-0" data-ai-src-id=".claudable/baselines/templates/contact.html::9">
+                <div class="card" data-ai-src-id=".claudable/baselines/templates/contact.html::10">
+                    <div class="card-body p-4" data-ai-src-id=".claudable/baselines/templates/contact.html::11">
+                        <h4 class="mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::12">发送消息</h4>
+                        <form id="contactForm" data-ai-src-id=".claudable/baselines/templates/contact.html::13">
+                            <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::14">
+                                <label for="name" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::15">姓名 *</label>
+                                <input type="text" class="form-control" id="name" name="name" required data-ai-src-id=".claudable/baselines/templates/contact.html::16">
+                            </div>
+                            <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::17">
+                                <label for="email" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::18">邮箱 *</label>
+                                <input type="email" class="form-control" id="email" name="email" required data-ai-src-id=".claudable/baselines/templates/contact.html::19">
+                            </div>
+                            <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::20">
+                                <label for="phone" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::21">电话</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" data-ai-src-id=".claudable/baselines/templates/contact.html::22">
+                            </div>
+                            <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::23">
+                                <label for="subject" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::24">主题</label>
+                                <select class="form-select" id="subject" name="subject" data-ai-src-id=".claudable/baselines/templates/contact.html::25">
+                                    <option value="" data-ai-src-id=".claudable/baselines/templates/contact.html::26">选择主题</option>
+                                    <option value="visit" data-ai-src-id=".claudable/baselines/templates/contact.html::27">第一次拜访</option>
+                                    <option value="prayer" data-ai-src-id=".claudable/baselines/templates/contact.html::28">祷告请求</option>
+                                    <option value="ministry" data-ai-src-id=".claudable/baselines/templates/contact.html::29">事工参与</option>
+                                    <option value="question" data-ai-src-id=".claudable/baselines/templates/contact.html::30">一般咨询</option>
+                                    <option value="other" data-ai-src-id=".claudable/baselines/templates/contact.html::31">其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::32">
+                                <label for="message" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::33">留言 *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required data-ai-src-id=".claudable/baselines/templates/contact.html::34"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" data-ai-src-id=".claudable/baselines/templates/contact.html::35">
+                                <i class="fas fa-paper-plane me-2" data-ai-src-id=".claudable/baselines/templates/contact.html::36"></i>发送消息
+                            </button>
+                        </form>
+                        <div id="contactMessage" class="mt-3" data-ai-src-id=".claudable/baselines/templates/contact.html::37"></div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Our Mission -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::14">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::15">我们的使命</h2>
-                    <div class="row" data-ai-src-id="templates/about.html::16">
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::17">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::18">
-                                <i class="fas fa-cross fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::19"></i>
+            <!-- Contact Information -->
+            <div class="col-lg-6" data-ai-src-id=".claudable/baselines/templates/contact.html::38">
+                <div class="card mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::39">
+                    <div class="card-body p-4" data-ai-src-id=".claudable/baselines/templates/contact.html::40">
+                        <h4 class="mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::41">教会信息</h4>
+
+                        <div class="contact-item mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::42">
+                            <div class="d-flex" data-ai-src-id=".claudable/baselines/templates/contact.html::43">
+                                <div class="flex-shrink-0" data-ai-src-id=".claudable/baselines/templates/contact.html::44">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary" data-ai-src-id=".claudable/baselines/templates/contact.html::45"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3" data-ai-src-id=".claudable/baselines/templates/contact.html::46">
+                                    <h5 class="mb-1" data-ai-src-id=".claudable/baselines/templates/contact.html::47">地址</h5>
+                                    <p class="text-muted mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::48">
+                                        城市中心街道123号<br>
+                                        邮编：100000
+                                    </p>
+                                </div>
                             </div>
-                            <h4 data-ai-src-id="templates/about.html::20">荣耀神</h4>
-                            <p data-ai-src-id="templates/about.html::21">以心灵诚实敬拜神，在生活的每个领域荣耀祂的名</p>
                         </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::22">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::23">
-                                <i class="fas fa-users fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::24"></i>
+
+                        <div class="contact-item mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::49">
+                            <div class="d-flex" data-ai-src-id=".claudable/baselines/templates/contact.html::50">
+                                <div class="flex-shrink-0" data-ai-src-id=".claudable/baselines/templates/contact.html::51">
+                                    <i class="fas fa-phone fa-2x text-primary" data-ai-src-id=".claudable/baselines/templates/contact.html::52"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3" data-ai-src-id=".claudable/baselines/templates/contact.html::53">
+                                    <h5 class="mb-1" data-ai-src-id=".claudable/baselines/templates/contact.html::54">电话</h5>
+                                    <p class="text-muted mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::55">
+                                        办公室：+86 123 4567 8900<br>
+                                        紧急：+86 123 4567 8901
+                                    </p>
+                                </div>
                             </div>
-                            <h4 data-ai-src-id="templates/about.html::25">造就信徒</h4>
-                            <p data-ai-src-id="templates/about.html::26">帮助信徒在灵命上成长，成为基督的精兵</p>
                         </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::27">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::28">
-                                <i class="fas fa-globe fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::29"></i>
+
+                        <div class="contact-item mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::56">
+                            <div class="d-flex" data-ai-src-id=".claudable/baselines/templates/contact.html::57">
+                                <div class="flex-shrink-0" data-ai-src-id=".claudable/baselines/templates/contact.html::58">
+                                    <i class="fas fa-envelope fa-2x text-primary" data-ai-src-id=".claudable/baselines/templates/contact.html::59"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3" data-ai-src-id=".claudable/baselines/templates/contact.html::60">
+                                    <h5 class="mb-1" data-ai-src-id=".claudable/baselines/templates/contact.html::61">邮箱</h5>
+                                    <p class="text-muted mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::62">
+                                        一般咨询：info@church.com<br>
+                                        祷告请求：prayer@church.com
+                                    </p>
+                                </div>
                             </div>
-                            <h4 data-ai-src-id="templates/about.html::30">传福音</h4>
-                            <p data-ai-src-id="templates/about.html::31">向世界分享耶稣基督的好消息，使万民作祂的门徒</p>
+                        </div>
+
+                        <div class="contact-item" data-ai-src-id=".claudable/baselines/templates/contact.html::63">
+                            <div class="d-flex" data-ai-src-id=".claudable/baselines/templates/contact.html::64">
+                                <div class="flex-shrink-0" data-ai-src-id=".claudable/baselines/templates/contact.html::65">
+                                    <i class="fas fa-clock fa-2x text-primary" data-ai-src-id=".claudable/baselines/templates/contact.html::66"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3" data-ai-src-id=".claudable/baselines/templates/contact.html::67">
+                                    <h5 class="mb-1" data-ai-src-id=".claudable/baselines/templates/contact.html::68">办公时间</h5>
+                                    <p class="text-muted mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::69">
+                                        周一至周五：9:00 - 17:00<br>
+                                        周六：9:00 - 12:00<br>
+                                        主日：8:00 - 14:00
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Our Beliefs -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::32">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::33">我们的信仰</h2>
-                    <div class="accordion" id="beliefsAccordion" data-ai-src-id="templates/about.html::34">
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::35">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::36">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#belief1" data-ai-src-id="templates/about.html::37">
-                                    圣经
-                                </button>
-                            </h2>
-                            <div id="belief1" class="accordion-collapse collapse show" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::38">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::39">
-                                    我们相信圣经是神所默示的话语，是信徒信仰和生活的最高权威。旧约和新约66卷书，
-                                    完全无误地启示了神的救恩计划。
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::40">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::41">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief2" data-ai-src-id="templates/about.html::42">
-                                    三位一体神
-                                </button>
-                            </h2>
-                            <div id="belief2" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::43">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::44">
-                                    我们相信独一的真神，圣父、圣子、圣灵三位一体，同尊同荣，同受敬拜。
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::45">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::46">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief3" data-ai-src-id="templates/about.html::47">
-                                    耶稣基督
-                                </button>
-                            </h2>
-                            <div id="belief3" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::48">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::49">
-                                    我们相信耶稣基督是神的独生子，由圣灵感孕，童贞女马利亚所生。祂是完全的神，
-                                    也是完全的人，为我们的罪死在十字架上，第三天复活，升天后坐在父神的右边。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leadership Team -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::50">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::51">牧养团队</h2>
-                    <div class="row" data-ai-src-id="templates/about.html::52">
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::53">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=王牧师" alt="王牧师" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::54">
-                            <h5 data-ai-src-id="templates/about.html::55">王牧师</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::56">主任牧师</p>
-                            <p class="small" data-ai-src-id="templates/about.html::57">拥有20年牧养经验，神学博士，致力于圣经教导和门徒训练。</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::58">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=李牧师" alt="李牧师" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::59">
-                            <h5 data-ai-src-id="templates/about.html::60">李牧师</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::61">副牧师</p>
-                            <p class="small" data-ai-src-id="templates/about.html::62">负责青年事工和社区 Outreach，充满热情和创意。</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::63">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=张长老" alt="张长老" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::64">
-                            <h5 data-ai-src-id="templates/about.html::65">张长老</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::66">长老</p>
-                            <p class="small" data-ai-src-id="templates/about.html::67">负责教会行政和财务管理，见证神 faithful 30年。</p>
+                <!-- Social Media -->
+                <div class="card" data-ai-src-id=".claudable/baselines/templates/contact.html::70">
+                    <div class="card-body p-4" data-ai-src-id=".claudable/baselines/templates/contact.html::71">
+                        <h4 class="mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::72">关注我们</h4>
+                        <div class="d-flex justify-content-around" data-ai-src-id=".claudable/baselines/templates/contact.html::73">
+                            <a href="#" class="text-primary text-decoration-none" data-ai-src-id=".claudable/baselines/templates/contact.html::74">
+                                <i class="fab fa-facebook fa-3x" data-ai-src-id=".claudable/baselines/templates/contact.html::75"></i>
+                                <p class="small mt-2 mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::76">Facebook</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none" data-ai-src-id=".claudable/baselines/templates/contact.html::77">
+                                <i class="fab fa-youtube fa-3x" data-ai-src-id=".claudable/baselines/templates/contact.html::78"></i>
+                                <p class="small mt-2 mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::79">YouTube</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none" data-ai-src-id=".claudable/baselines/templates/contact.html::80">
+                                <i class="fab fa-instagram fa-3x" data-ai-src-id=".claudable/baselines/templates/contact.html::81"></i>
+                                <p class="small mt-2 mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::82">Instagram</p>
+                            </a>
+                            <a href="#" class="text-primary text-decoration-none" data-ai-src-id=".claudable/baselines/templates/contact.html::83">
+                                <i class="fab fa-telegram fa-3x" data-ai-src-id=".claudable/baselines/templates/contact.html::84"></i>
+                                <p class="small mt-2 mb-0" data-ai-src-id=".claudable/baselines/templates/contact.html::85">Telegram</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -135,19 +159,156 @@
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-5 bg-light" data-ai-src-id="templates/about.html::68">
-    <div class="container" data-ai-src-id="templates/about.html::69">
-        <div class="row" data-ai-src-id="templates/about.html::70">
-            <div class="col-lg-8 mx-auto text-center" data-ai-src-id="templates/about.html::71">
-                <h2 class="mb-4" data-ai-src-id="templates/about.html::72">加入我们的教会大家庭</h2>
-                <p class="lead mb-4" data-ai-src-id="templates/about.html::73">无论您来自哪里，我们都欢迎您的到来</p>
-                <a href="/contact" class="btn btn-primary btn-lg me-3" data-ai-src-id="templates/about.html::74">联系我们</a>
-                <a href="/ministries" class="btn btn-outline-primary btn-lg" data-ai-src-id="templates/about.html::75">了解事工</a>
+<!-- Map Section -->
+<section class="py-5 bg-light" data-ai-src-id=".claudable/baselines/templates/contact.html::86">
+    <div class="container" data-ai-src-id=".claudable/baselines/templates/contact.html::87">
+        <div class="row" data-ai-src-id=".claudable/baselines/templates/contact.html::88">
+            <div class="col-12" data-ai-src-id=".claudable/baselines/templates/contact.html::89">
+                <h2 class="text-center mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::90">找到我们</h2>
+                <div class="ratio ratio-16x9" data-ai-src-id=".claudable/baselines/templates/contact.html::91">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8987419176584!2d121.5433656!3d25.0339798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2sTaipei%20101%2C%20Taiwan!5e0!3m2!1sen!2sus!4v1234567890"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy" data-ai-src-id=".claudable/baselines/templates/contact.html::92">
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Prayer Request Section -->
+<section class="py-5" data-ai-src-id=".claudable/baselines/templates/contact.html::93">
+    <div class="container" data-ai-src-id=".claudable/baselines/templates/contact.html::94">
+        <div class="row" data-ai-src-id=".claudable/baselines/templates/contact.html::95">
+            <div class="col-lg-8 mx-auto text-center" data-ai-src-id=".claudable/baselines/templates/contact.html::96">
+                <h2 class="mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::97">需要祷告吗？</h2>
+                <p class="lead mb-4" data-ai-src-id=".claudable/baselines/templates/contact.html::98">
+                    我们的祷告团队很乐意为您祷告。请分享您的需要，让我们在祷告中记念您。
+                </p>
+                <button class="btn btn-primary btn-lg" onclick="showPrayerForm()" data-ai-src-id=".claudable/baselines/templates/contact.html::99">
+                    <i class="fas fa-praying-hands me-2" data-ai-src-id=".claudable/baselines/templates/contact.html::100"></i>提交祷告请求
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Prayer Request Modal -->
+<div class="modal fade" id="prayerModal" tabindex="-1" data-ai-src-id=".claudable/baselines/templates/contact.html::101">
+    <div class="modal-dialog" data-ai-src-id=".claudable/baselines/templates/contact.html::102">
+        <div class="modal-content" data-ai-src-id=".claudable/baselines/templates/contact.html::103">
+            <div class="modal-header" data-ai-src-id=".claudable/baselines/templates/contact.html::104">
+                <h5 class="modal-title" data-ai-src-id=".claudable/baselines/templates/contact.html::105">祷告请求</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" data-ai-src-id=".claudable/baselines/templates/contact.html::106"></button>
+            </div>
+            <div class="modal-body" data-ai-src-id=".claudable/baselines/templates/contact.html::107">
+                <form id="prayerForm" data-ai-src-id=".claudable/baselines/templates/contact.html::108">
+                    <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::109">
+                        <label for="prayerName" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::110">姓名</label>
+                        <input type="text" class="form-control" id="prayerName" required data-ai-src-id=".claudable/baselines/templates/contact.html::111">
+                    </div>
+                    <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::112">
+                        <label for="prayerContact" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::113">联系方式（邮箱或电话）</label>
+                        <input type="text" class="form-control" id="prayerContact" required data-ai-src-id=".claudable/baselines/templates/contact.html::114">
+                    </div>
+                    <div class="mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::115">
+                        <label for="prayerRequest" class="form-label" data-ai-src-id=".claudable/baselines/templates/contact.html::116">祷告事项</label>
+                        <textarea class="form-control" id="prayerRequest" rows="4" required data-ai-src-id=".claudable/baselines/templates/contact.html::117"></textarea>
+                    </div>
+                    <div class="form-check mb-3" data-ai-src-id=".claudable/baselines/templates/contact.html::118">
+                        <input class="form-check-input" type="checkbox" id="anonymousRequest" data-ai-src-id=".claudable/baselines/templates/contact.html::119">
+                        <label class="form-check-label" for="anonymousRequest" data-ai-src-id=".claudable/baselines/templates/contact.html::120">
+                            匿名提交（不显示姓名）
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" data-ai-src-id=".claudable/baselines/templates/contact.html::121">提交祷告请求</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+        };
+
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            const messageDiv = document.getElementById('contactMessage');
+            messageDiv.innerHTML = `
+                <div class="alert alert-success" data-ai-src-id=".claudable/baselines/templates/contact.html::122">
+                    <i class="fas fa-check-circle me-2" data-ai-src-id=".claudable/baselines/templates/contact.html::123"></i>
+                    ${result.message}
+                </div>
+            `;
+            this.reset();
+
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        })
+        .catch(error => {
+            const messageDiv = document.getElementById('contactMessage');
+            messageDiv.innerHTML = `
+                <div class="alert alert-danger" data-ai-src-id=".claudable/baselines/templates/contact.html::124">
+                    <i class="fas fa-exclamation-circle me-2" data-ai-src-id=".claudable/baselines/templates/contact.html::125"></i>
+                    发送失败，请稍后重试或直接联系我们。
+                </div>
+            `;
+        });
+    });
+
+    // Prayer form submission
+    document.getElementById('prayerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            contact: formData.get('contact'),
+            request: formData.get('request'),
+            anonymous: document.getElementById('anonymousRequest').checked
+        };
+
+        // In a real application, this would send to a prayer API
+        console.log('Prayer request:', data);
+
+        alert('祷告请求已提交，我们的祷告团队会为您祷告。');
+
+        // Close modal and reset form
+        bootstrap.Modal.getInstance(document.getElementById('prayerModal')).hide();
+        this.reset();
+    });
+});
+
+function showPrayerForm() {
+    const modal = new bootstrap.Modal(document.getElementById('prayerModal'));
+    modal.show();
+}
+</script>
 {% endblock %}
 
 
@@ -269,7 +430,7 @@
 
 <!-- AI SMART EDIT INJECTION START -->
 <script>
-window.__AI_SMART_EDIT_FILE__ = "templates/about.html";
+window.__AI_SMART_EDIT_FILE__ = ".claudable/baselines/templates/contact.html";
 (function () {
   const NAMESPACE = 'AI_SMART_EDIT';
   

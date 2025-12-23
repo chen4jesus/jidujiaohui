@@ -1,154 +1,111 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="zh-CN" data-ai-src-id=".claudable/baselines/templates/base.html::0">
+<head data-ai-src-id=".claudable/baselines/templates/base.html::1"><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ai-src-id=".claudable/baselines/templates/base.html::2">{% block title %}基督教会{% endblock %}</title>
 
-{% block title %}关于我们 - 基督教会{% endblock %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-{% block content %}
-<!-- Page Header -->
-<section class="page-header" data-ai-src-id="templates/about.html::0">
-    <div class="container" data-ai-src-id="templates/about.html::1">
-        <div class="row" data-ai-src-id="templates/about.html::2">
-            <div class="col-lg-8 mx-auto text-center" data-ai-src-id="templates/about.html::3">
-                <h1 class="display-4 text-white mb-4" data-ai-src-id="templates/about.html::4">关于我们</h1>
-                <p class="lead text-white" data-ai-src-id="templates/about.html::5">认识我们的教会、信仰和使命</p>
+    {% block head %}{% endblock %}
+</head>
+<body class="ai-smart-edit-editing" style="cursor: crosshair;" data-ai-src-id=".claudable/baselines/templates/base.html::3">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" data-ai-src-id=".claudable/baselines/templates/base.html::4">
+        <div class="container" data-ai-src-id=".claudable/baselines/templates/base.html::5">
+            <a class="navbar-brand" href="/" data-ai-src-id=".claudable/baselines/templates/base.html::6">
+                <i class="fas fa-church me-2" data-ai-src-id=".claudable/baselines/templates/base.html::7"></i>
+                <strong data-ai-src-id=".claudable/baselines/templates/base.html::8">基督教会</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" data-ai-src-id=".claudable/baselines/templates/base.html::9">
+                <span class="navbar-toggler-icon" data-ai-src-id=".claudable/baselines/templates/base.html::10"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav" data-ai-src-id=".claudable/baselines/templates/base.html::11">
+                <ul class="navbar-nav ms-auto" data-ai-src-id=".claudable/baselines/templates/base.html::12">
+                    <li class="nav-item" data-ai-src-id=".claudable/baselines/templates/base.html::13">
+                        <a class="nav-link" href="/" data-ai-src-id=".claudable/baselines/templates/base.html::14">首页</a>
+                    </li>
+                    <li class="nav-item" data-ai-src-id=".claudable/baselines/templates/base.html::15">
+                        <a class="nav-link" href="/about" data-ai-src-id=".claudable/baselines/templates/base.html::16">关于我们</a>
+                    </li>
+                    <li class="nav-item" data-ai-src-id=".claudable/baselines/templates/base.html::17">
+                        <a class="nav-link" href="/ministries" data-ai-src-id=".claudable/baselines/templates/base.html::18">事工</a>
+                    </li>
+                    <li class="nav-item" data-ai-src-id=".claudable/baselines/templates/base.html::19">
+                        <a class="nav-link" href="/sermons" data-ai-src-id=".claudable/baselines/templates/base.html::20">讲道信息</a>
+                    </li>
+                    <li class="nav-item" data-ai-src-id=".claudable/baselines/templates/base.html::21">
+                        <a class="nav-link" href="/contact" data-ai-src-id=".claudable/baselines/templates/base.html::22">联系我们</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- About Content -->
-<section class="py-5" data-ai-src-id="templates/about.html::6">
-    <div class="container" data-ai-src-id="templates/about.html::7">
-        <div class="row" data-ai-src-id="templates/about.html::8">
-            <div class="col-lg-8 mx-auto" data-ai-src-id="templates/about.html::9">
-                <!-- Our Story -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::10">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::11">我们的故事</h2>
-                    <p class="lead" data-ai-src-id="templates/about.html::12">
-                        基督教会成立于2010年，从一个小小的家庭团契开始，至今已经发展成为拥有数百名会众的温暖大家庭。
+    <!-- Main Content -->
+    <main data-ai-src-id=".claudable/baselines/templates/base.html::23">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" data-ai-src-id=".claudable/baselines/templates/base.html::24">
+        <div class="container" data-ai-src-id=".claudable/baselines/templates/base.html::25">
+            <div class="row" data-ai-src-id=".claudable/baselines/templates/base.html::26">
+                <div class="col-md-4 mb-4" data-ai-src-id=".claudable/baselines/templates/base.html::27">
+                    <h5 data-ai-src-id=".claudable/baselines/templates/base.html::28">基督教会</h5>
+                    <p data-ai-src-id=".claudable/baselines/templates/base.html::29">传扬福音，牧养信徒，荣耀神的名</p>
+                    <div class="social-links" data-ai-src-id=".claudable/baselines/templates/base.html::30">
+                        <a href="#" class="text-white me-3" data-ai-src-id=".claudable/baselines/templates/base.html::31"><i class="fab fa-facebook" data-ai-src-id=".claudable/baselines/templates/base.html::32"></i></a>
+                        <a href="#" class="text-white me-3" data-ai-src-id=".claudable/baselines/templates/base.html::33"><i class="fab fa-youtube" data-ai-src-id=".claudable/baselines/templates/base.html::34"></i></a>
+                        <a href="#" class="text-white me-3" data-ai-src-id=".claudable/baselines/templates/base.html::35"><i class="fab fa-instagram" data-ai-src-id=".claudable/baselines/templates/base.html::36"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4" data-ai-src-id=".claudable/baselines/templates/base.html::37">
+                    <h5 data-ai-src-id=".claudable/baselines/templates/base.html::38">快速链接</h5>
+                    <ul class="list-unstyled" data-ai-src-id=".claudable/baselines/templates/base.html::39">
+                        <li data-ai-src-id=".claudable/baselines/templates/base.html::40"><a href="/" class="text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::41">首页</a></li>
+                        <li data-ai-src-id=".claudable/baselines/templates/base.html::42"><a href="/about" class="text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::43">关于我们</a></li>
+                        <li data-ai-src-id=".claudable/baselines/templates/base.html::44"><a href="/ministries" class="text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::45">事工</a></li>
+                        <li data-ai-src-id=".claudable/baselines/templates/base.html::46"><a href="/sermons" class="text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::47">讲道信息</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4" data-ai-src-id=".claudable/baselines/templates/base.html::48">
+                    <h5 data-ai-src-id=".claudable/baselines/templates/base.html::49">联系我们</h5>
+                    <p class="text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::50">
+                        <i class="fas fa-map-marker-alt me-2" data-ai-src-id=".claudable/baselines/templates/base.html::51"></i> 地址：城市中心街道123号<br>
+                        <i class="fas fa-phone me-2" data-ai-src-id=".claudable/baselines/templates/base.html::52"></i> 电话：+86 123 4567 8900<br>
+                        <i class="fas fa-envelope me-2" data-ai-src-id=".claudable/baselines/templates/base.html::53"></i> 邮箱：info@church.com
                     </p>
-                    <p data-ai-src-id="templates/about.html::13">
-                        十多年来，我们见证了神奇妙的恩典和带领。从最初在客厅聚会，到如今拥有自己的崇拜场所，
-                        每一步都充满了神的恩典和弟兄姊妹的奉献。我们相信，教会的存在是为了荣耀神、服事人、
-                        传扬耶稣基督的福音。
-                    </p>
-                </div>
-
-                <!-- Our Mission -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::14">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::15">我们的使命</h2>
-                    <div class="row" data-ai-src-id="templates/about.html::16">
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::17">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::18">
-                                <i class="fas fa-cross fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::19"></i>
-                            </div>
-                            <h4 data-ai-src-id="templates/about.html::20">荣耀神</h4>
-                            <p data-ai-src-id="templates/about.html::21">以心灵诚实敬拜神，在生活的每个领域荣耀祂的名</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::22">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::23">
-                                <i class="fas fa-users fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::24"></i>
-                            </div>
-                            <h4 data-ai-src-id="templates/about.html::25">造就信徒</h4>
-                            <p data-ai-src-id="templates/about.html::26">帮助信徒在灵命上成长，成为基督的精兵</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::27">
-                            <div class="mission-icon" data-ai-src-id="templates/about.html::28">
-                                <i class="fas fa-globe fa-3x text-primary mb-3" data-ai-src-id="templates/about.html::29"></i>
-                            </div>
-                            <h4 data-ai-src-id="templates/about.html::30">传福音</h4>
-                            <p data-ai-src-id="templates/about.html::31">向世界分享耶稣基督的好消息，使万民作祂的门徒</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Our Beliefs -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::32">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::33">我们的信仰</h2>
-                    <div class="accordion" id="beliefsAccordion" data-ai-src-id="templates/about.html::34">
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::35">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::36">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#belief1" data-ai-src-id="templates/about.html::37">
-                                    圣经
-                                </button>
-                            </h2>
-                            <div id="belief1" class="accordion-collapse collapse show" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::38">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::39">
-                                    我们相信圣经是神所默示的话语，是信徒信仰和生活的最高权威。旧约和新约66卷书，
-                                    完全无误地启示了神的救恩计划。
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::40">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::41">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief2" data-ai-src-id="templates/about.html::42">
-                                    三位一体神
-                                </button>
-                            </h2>
-                            <div id="belief2" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::43">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::44">
-                                    我们相信独一的真神，圣父、圣子、圣灵三位一体，同尊同荣，同受敬拜。
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item" data-ai-src-id="templates/about.html::45">
-                            <h2 class="accordion-header" data-ai-src-id="templates/about.html::46">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#belief3" data-ai-src-id="templates/about.html::47">
-                                    耶稣基督
-                                </button>
-                            </h2>
-                            <div id="belief3" class="accordion-collapse collapse" data-bs-parent="#beliefsAccordion" data-ai-src-id="templates/about.html::48">
-                                <div class="accordion-body" data-ai-src-id="templates/about.html::49">
-                                    我们相信耶稣基督是神的独生子，由圣灵感孕，童贞女马利亚所生。祂是完全的神，
-                                    也是完全的人，为我们的罪死在十字架上，第三天复活，升天后坐在父神的右边。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leadership Team -->
-                <div class="mb-5" data-ai-src-id="templates/about.html::50">
-                    <h2 class="section-title mb-4" data-ai-src-id="templates/about.html::51">牧养团队</h2>
-                    <div class="row" data-ai-src-id="templates/about.html::52">
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::53">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=王牧师" alt="王牧师" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::54">
-                            <h5 data-ai-src-id="templates/about.html::55">王牧师</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::56">主任牧师</p>
-                            <p class="small" data-ai-src-id="templates/about.html::57">拥有20年牧养经验，神学博士，致力于圣经教导和门徒训练。</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::58">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=李牧师" alt="李牧师" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::59">
-                            <h5 data-ai-src-id="templates/about.html::60">李牧师</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::61">副牧师</p>
-                            <p class="small" data-ai-src-id="templates/about.html::62">负责青年事工和社区 Outreach，充满热情和创意。</p>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-ai-src-id="templates/about.html::63">
-                            <img src="https://via.placeholder.com/150x150/5E9BD6/FFFFFF?text=张长老" alt="张长老" class="rounded-circle mb-3" width="150" data-ai-src-id="templates/about.html::64">
-                            <h5 data-ai-src-id="templates/about.html::65">张长老</h5>
-                            <p class="text-muted" data-ai-src-id="templates/about.html::66">长老</p>
-                            <p class="small" data-ai-src-id="templates/about.html::67">负责教会行政和财务管理，见证神 faithful 30年。</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- CTA Section -->
-<section class="py-5 bg-light" data-ai-src-id="templates/about.html::68">
-    <div class="container" data-ai-src-id="templates/about.html::69">
-        <div class="row" data-ai-src-id="templates/about.html::70">
-            <div class="col-lg-8 mx-auto text-center" data-ai-src-id="templates/about.html::71">
-                <h2 class="mb-4" data-ai-src-id="templates/about.html::72">加入我们的教会大家庭</h2>
-                <p class="lead mb-4" data-ai-src-id="templates/about.html::73">无论您来自哪里，我们都欢迎您的到来</p>
-                <a href="/contact" class="btn btn-primary btn-lg me-3" data-ai-src-id="templates/about.html::74">联系我们</a>
-                <a href="/ministries" class="btn btn-outline-primary btn-lg" data-ai-src-id="templates/about.html::75">了解事工</a>
+            <hr class="bg-white-50 my-4">
+
+            <div class="text-center" data-ai-src-id=".claudable/baselines/templates/base.html::54">
+                <p class="mb-0 text-white-50" data-ai-src-id=".claudable/baselines/templates/base.html::55">&copy; 2024 基督教会. 保留所有权利.</p>
             </div>
         </div>
-    </div>
-</section>
-{% endblock %}
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block scripts %}{% endblock %}
+
+
+
+
+
 
 
 
@@ -269,7 +226,7 @@
 
 <!-- AI SMART EDIT INJECTION START -->
 <script>
-window.__AI_SMART_EDIT_FILE__ = "templates/about.html";
+window.__AI_SMART_EDIT_FILE__ = ".claudable/baselines/templates/base.html";
 (function () {
   const NAMESPACE = 'AI_SMART_EDIT';
   
@@ -898,3 +855,5 @@ window.__AI_SMART_EDIT_FILE__ = "templates/about.html";
 
 </script>
 <!-- AI SMART EDIT INJECTION END -->
+</body>
+</html>
